@@ -2,6 +2,8 @@ package com.example.users;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -14,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig implements WebMvcConfigurer {
-
     @Bean
     public Docket postsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -26,6 +27,28 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .build();
     }
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Skilled").build();
+        return new ApiInfoBuilder().title("Maher Marawi").build();
     }
+
+//    public static final String PATH = "/api-docs";
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .select()
+//                .apis(RequestHandlerSelectors.any())
+//                .paths(PathSelectors.any())
+//                .build();
+//    }
+//
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addRedirectViewController(PATH, "/MySwagger");
+//    }
+//
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler(PATH + "/MySwaggerASDASD").addResourceLocations("classpath:/META-INF/resources/");
+//    }
+
+
 }

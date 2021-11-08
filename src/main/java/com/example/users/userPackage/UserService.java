@@ -15,7 +15,6 @@ public class UserService {
     private static final Firestore dbFirestore = FirestoreClient.getFirestore();
 
 
-
     public List getUsers() throws InterruptedException, ExecutionException {
 
         List<User> response = new ArrayList<>();
